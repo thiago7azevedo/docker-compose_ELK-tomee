@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tomee>
+        <Resource id="CRVirtual" type="DataSource">
+          JdbcDriver = oracle.jdbc.driver.OracleDriver
+          JdbcUrl = jdbc:oracle:thin:@192.168.0.11:1521:ORAOPER
+          username = crvirtual
+          password = 123
+        </Resource>
+        <Resource id="CRVirtualUnmanaged" type="DataSource">
+          JdbcDriver = oracle.jdbc.driver.OracleDriver
+          JdbcUrl = jdbc:oracle:thin:@192.168.0.11:1521:ORAOPER
+          username = crvirtual
+          password = 123
+          JtaManaged = false
+        </Resource>
+        <Resource id="CRVirtual2" type="DataSource">
+          JdbcDriver = oracle.jdbc.driver.OracleDriver
+          JdbcUrl = jdbc:oracle:thin:@192.168.0.11:1521:ORAOPER
+          username = crvirtual2
+          password = 123
+        </Resource>
+        <Resource id="CRVirtualUnmanaged2" type="DataSource">
+          JdbcDriver = oracle.jdbc.driver.OracleDriver
+          JdbcUrl = jdbc:oracle:thin:@192.168.0.11:1521:ORAOPER
+          username = crvirtual2
+          password = 123
+          JtaManaged = false
+        </Resource>
+        <Resource id="Siem" type="DataSource">
+          JdbcDriver = oracle.jdbc.driver.OracleDriver
+          JdbcUrl = jdbc:oracle:thin:@192.168.0.11:1521:ORAOPER
+          username = dba_siem
+          password = 123
+        </Resource>
+        <Resource id="SiemUnmanaged" type="DataSource">
+          JdbcDriver = oracle.jdbc.driver.OracleDriver
+          JdbcUrl = jdbc:oracle:thin:@192.168.0.11:1521:ORAOPER
+          username = dba_siem
+          password = 123
+          JtaManaged = false
+        </Resource>
+        <Resource id="CRVirtualPJ" type="DataSource">
+          JdbcDriver = oracle.jdbc.driver.OracleDriver
+          JdbcUrl = jdbc:oracle:thin:@192.168.0.11:1521:ORAOPER
+          username = crvirtual_pj
+          password = 123
+          testOnBorrow = true
+          validationQuery = select 1 from dual
+        </Resource>
+        <Resource id="CRVirtualPJ_Unmanaged" type="DataSource">
+          JdbcDriver = oracle.jdbc.driver.OracleDriver
+          JdbcUrl = jdbc:oracle:thin:@192.168.0.11:1521:ORAOPER
+          username = crvirtual_pj
+          password = 123
+          JtaManaged = false
+          testOnBorrow = true
+          validationQuery = select 1 from dual
+        </Resource>
+</tomee>

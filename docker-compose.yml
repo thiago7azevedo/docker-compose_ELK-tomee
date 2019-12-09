@@ -1,0 +1,23 @@
+version: '3'
+services:
+  tomee_crvirtual2:
+    env_file: linux.env
+#    env_file: windows.env
+    image: tomitribe/tomee:8-jre-8.0.0-M2-TT1-microprofile 
+    container_name: tomee_crvirtual2
+    volumes:
+      - ./conf/server.xml:/usr/local/tomee/conf/server.xml       
+      - ./conf/tomee.xml:/usr/local/tomee/conf/tomee.xml
+      - ./certs/gbr.jks:/usr/local/tomee/conf/gbr.jks
+      - ./webapps:/usr/local/tomee/webapps
+      - ./lib/ojdbc6-11.2.0.4.0.jar:/usr/local/tomee/lib/ojdbc6-11.2.0.4.0.jar  
+    ports:
+      - 8080:8080
+#   restart: always
+    network_mode: bridge
+    logging:
+      driver: "gelf"
+      options:
+         gelf-address: 'udp://localhost:12201'
+         tag: "logstash-"
+
